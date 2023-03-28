@@ -399,7 +399,7 @@ h2 {
 }
 .hero__image {
   position: relative;
-  background: radial-gradient(farthest-corner, transparent, rgb(244, 241, 222)), url("./images/backgr2.jpg");
+  background: radial-gradient(farthest-corner, transparent, rgb(244, 241, 222)), url("/images/backgr2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -416,7 +416,7 @@ h2 {
 .hero__image::before {
   content: "";
   position: absolute;
-  background-image: url("./images/poke-boackgroun.png");
+  background-image: url("/images/poke-boackgroun.png");
   height: 100%;
   width: 100%;
   background-size: 30vw;
