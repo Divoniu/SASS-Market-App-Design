@@ -1,0 +1,63 @@
+@use "../components/variables" as *;
+@use "../components/mixins" as *;
+@use "../components/reset" as *;
+
+.articles {
+  background-color: map-get($secondary-palette, "cg1");
+}
+
+.article {
+  &__content {
+  }
+
+  &__grid {
+    display: grid;
+    gap: 1.875rem;
+    grid-template-columns: 1fr; //for mobile
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint-up(large) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    //o alta varianta care tine locul media queries de mai sus
+    // grid-template-columns: repeat(auto-fit, minmax(14.375rem, 1fr));
+  }
+  &__item {
+    background-color: map-get($panic-palette, "p1");
+    border-radius: 0.3125rem;
+    overflow: hidden; // altfel nu se afiseaza colturile rotunjite
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+    transition: all 100ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  &__image {
+    height: 12.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  &__text {
+    color: map-get($primary-palette, "b5");
+    padding: 1.875rem 1.875rem 2.5rem 1.875rem;
+    @include breakpoint-up(medium) {
+      padding: 1.875rem 1.5625rem;
+    }
+  }
+  &__author {
+    font-size: 0.625rem;
+    margin-bottom: 0.75rem;
+  }
+  &__title {
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-size: 1rem;
+    color: map-get($primary-palette, "b5");
+  }
+  &__description {
+    font-size: 0.8125rem;
+  }
+}

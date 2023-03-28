@@ -1,0 +1,19 @@
+//@use "custom";
+// Import the components
+
+@use "../Proiect SCSS/components/animations";
+@use "../Proiect SCSS/components/buttons";
+@use "../Proiect SCSS/components/mixins";
+@use "../Proiect SCSS/components/variables";
+@use "../Proiect SCSS/components/reset";
+
+//Import sections
+
+@use "../Proiect SCSS/sections/faq";
+@use "../Proiect SCSS/sections/footer";
+@use "../Proiect SCSS/sections/latestArticles";
+@use "../Proiect SCSS/sections/reviews";
+@use "../Proiect SCSS/sections/sections";
+@use "../Proiect SCSS/sections/services";
+
+@use "../Proiect SCSS/sections/header";

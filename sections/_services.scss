@@ -1,0 +1,66 @@
+@use "../components/variables" as *;
+@use "../components/mixins" as *;
+
+.feature {
+  background-color: rgb(235, 235, 215);
+  text-align: center;
+  @include breakpoint-up(medium) {
+    text-align: left;
+  }
+  &__intro {
+    margin-bottom: 3.75rem;
+    @include breakpoint-up(large) {
+      width: 48%;
+    }
+  }
+  &__grid {
+    @include breakpoint-up(medium) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  &__item {
+    padding: 0.9375rem;
+
+    @include breakpoint-up(medium) {
+      flex: 1 0 50%;
+    } //flex grow, shrink basis
+    @include breakpoint-up(large) {
+      flex: 1;
+    }
+    @include breakpoint-down(small) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+  &__icon {
+    img {
+      width: 3.5rem;
+      height: auto;
+    }
+    margin-bottom: 1.875rem;
+    @include breakpoint-up(large) {
+      margin-bottom: 2.75rem;
+    }
+  }
+  &__title {
+    font-weight: 300;
+    line-height: 1.15;
+    color: map-get($primary-palette, "b5");
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    width: fit-content;
+
+    @include breakpoint-up(large) {
+      font-size: 1.5rem;
+      margin-bottom: 2.125rem;
+    }
+  }
+  &__description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+}

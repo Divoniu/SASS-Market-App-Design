@@ -1,0 +1,55 @@
+//HERO section class
+@use "../components/variables" as *;
+@use "../components/mixins" as *;
+@use "../components/typography" as *;
+.hero {
+  background-color: rgb(241, 239, 223);
+  // am facut clasa container ca sa mi se poata vedea intreg blocul cu culoarea de mai sus
+  .container {
+    @include breakpoint-up(large) {
+      display: flex;
+
+      align-items: center;
+    }
+  }
+  &__image {
+    position: relative;
+    background: radial-gradient(
+        farthest-corner,
+        transparent,
+        map-get($panic-palette, "p1")
+      ),
+      url("/images/backgr2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 17.5rem;
+
+    @include breakpoint-up(large) {
+      flex: 1;
+      order: 2;
+      min-height: 41rem;
+      background-position: left center;
+      //background-image: url('desktop-image');
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url("/images/poke-boackgroun.png");
+      height: 100%;
+      width: 100%;
+      background-size: 30vw;
+
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+  &__text {
+    text-align: center;
+    @include breakpoint-up(large) {
+      text-align: left;
+      flex: 1;
+      order: 1;
+    }
+  }
+}

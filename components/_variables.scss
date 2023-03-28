@@ -1,0 +1,79 @@
+//@use "../custom" as *;
+
+//color palettes
+$snorlax1-dark: rgb(36, 108, 172);
+$snorlax1-light: rgb(36, 142, 172);
+$snorlax2-dark: rgb(206, 161, 113);
+$snorlax2-light: rgb(230, 205, 172);
+$snorlax3-dark: rgb(193, 95, 82);
+$snorlax3-light: rgb(221, 126, 118);
+
+$primary-palette: (
+  "g1": rgb(217, 237, 146),
+  //Salad
+  "g2": rgb(181, 228, 140),
+  //yellowish green
+  "g3": rgb(153, 217, 140),
+  //apple green
+  "g4": rgb(118, 200, 147),
+  //moss
+  "g5": rgb(82, 182, 154),
+  //malachite
+  "b1": rgb(52, 160, 164),
+  //duck blue
+  "b2": rgb(22, 138, 173),
+  //night blue
+  "b3": rgb(26, 117, 159),
+  //antwerp blue
+  "b4": rgb(30, 96, 145),
+  //stratospheric blue
+  "b5": rgb(24, 78, 119),
+);
+//agate
+
+$secondary-palette: (
+  "b1": rgb(182, 173, 144),
+  //Sketch khaki
+  "b2": rgb(166, 138, 100),
+  //light walnut
+  "b3": rgb(147, 102, 57),
+  //dark brown
+  "b4": rgb(127, 79, 36),
+  //maroon
+  "b5": rgb(88, 47, 14),
+  //cashew
+  "cg1": rgb(194, 197, 170),
+  //spring dim
+  "cg2": rgb(164, 172, 134),
+  //grayish olive
+  "cg3": rgb(101, 109, 74),
+  //olive
+  "cg4": rgb(65, 72, 51),
+  //warm gray w9
+  "cg5": rgb(51, 61, 41),
+); //warm grray w10
+
+$panic-palette: (
+  "p1": rgb(244, 241, 222),
+  //eggshell
+  "p2": rgb(224, 122, 95),
+  //terra cotta
+  "p3": rgb(61, 64, 91),
+  //independence
+  "p4": rgb(129, 178, 154),
+  //green sheen
+  "p5": rgb(242, 204, 143),
+  //deep champagne
+);
+
+$primary: map-get($primary-palette, "g4");
+$secondary: map-get($primary-palette, "b3");
+//spacing
+
+//borders
+
+// Font Sizes
+$font-sm: 0.875rem; // 14px
+$font-med: 1.125rem; // 18px
+$font-lg: 1.25rem;
+$font-xlg: 3.25rem;

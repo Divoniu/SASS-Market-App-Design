@@ -1,0 +1,146 @@
+//@use "../custom" as *;
+@use "../components/variables" as *;
+@use "../components/animations" as *;
+
+.header {
+  //Hamburger open styles
+
+  &.open {
+    .header__hamburger-menu {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .overlay {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-image: linear-gradient(
+      map-get($primary-palette, "b5"),
+      transparent
+    );
+    z-index: 8;
+    // &.fade-in {
+    //   display: block;
+    // }
+    // &.fade-out {
+    //   display: none;
+    // }
+  }
+  //NAVBAR
+  nav {
+    position: relative;
+    background-color: map-get($panic-palette, "p1");
+
+    z-index: 9;
+    //
+    padding: 1.0625rem;
+    // padding-top: 1.0625rem;
+    // padding-bottom: 1.0625rem;
+    // chestii adaugate de mine
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    img {
+      height: 4.5rem;
+      // width: fit-content;
+    }
+    p {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      span {
+        white-space: nowrap;
+        font-weight: 700;
+        color: map-get($primary-palette, "b5");
+      }
+    }
+  }
+
+  &__hamburger-menu {
+    //mobile menu
+    > span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: map-get($primary-palette, "b5");
+      transition: all 300ms ease-in-out;
+      transform-origin: 3px;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__menu-list {
+    background: map-get($panic-palette, "p1");
+
+    padding: 1.625rem;
+    border-radius: 10px;
+    position: absolute;
+    width: calc(100% - 3rem);
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1.5rem;
+    z-index: 10;
+    a {
+      display: block;
+      // color
+      padding: 0.625rem;
+      text-align: center;
+      border-radius: 10px;
+      &:hover {
+        background-color: rgb(224, 221, 202);
+      }
+    }
+  }
+
+  &__links {
+    a {
+      position: relative;
+      font-size: $font-sm;
+      transition: color 300ms ease-in-out;
+      &:not(:last-child) {
+        margin-right: 2rem; //32px
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 5px;
+
+        left: 0;
+        right: 0;
+        bottom: -30px;
+        background: linear-gradient(
+          to right,
+          map-get($primary-palette, "g4"),
+          map-get($primary-palette, "b4")
+        );
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+      }
+      &:hover {
+        color: map-get($secondary-palette, "cg4");
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

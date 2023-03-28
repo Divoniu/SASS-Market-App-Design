@@ -1,0 +1,126 @@
+@use "../components/variables" as *;
+@use "../components/mixins" as *;
+@use "../components/reset" as *;
+
+.footer {
+  background-color: map-get($secondary-palette, "cg2");
+  color: white;
+
+  //a{color:white};
+
+  padding: 2.5rem;
+  text-align: center;
+  .container {
+    @include breakpoint-up(large) {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 3fr;
+      grid-template-rows: 1fr auto;
+      grid-template-areas:
+        "logo links1 links2 cta"
+        "social links1 links2 copyright";
+      gap: 1rem;
+      justify-items: start;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+
+    @include breakpoint-down(medium) {
+      margin-bottom: 1.875rem;
+    }
+    @include breakpoint-up(large) {
+      grid-area: logo;
+    }
+
+    & > img {
+      //imagine logo
+      height: 3rem;
+    }
+  }
+
+  &__social {
+    & > a > img {
+      //dimensiune iconite social media
+      height: 1.5rem;
+
+      &:hover {
+        filter: brightness(0.7);
+      }
+    }
+
+    a:not(:last-child) {
+      //display: inline-block; not dry
+      margin-right: 0.7rem;
+    }
+    a {
+      display: inline-block;
+      height: 1.25rem;
+      // pentru cand in loc de img tag pun svg tag
+      // svg path {
+      //   transition: fill 150ms ease-in-out;
+      // }
+      // &:hover {
+      //   fill: limegreen;
+      // }
+    }
+    @include breakpoint-down(medium) {
+      margin-bottom: 1.875rem;
+    }
+    @include breakpoint-up(large) {
+      grid-area: social;
+    }
+  }
+
+  &__links {
+    font-size: 0.9375rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2.25;
+    //line-height: 2; am space between deja
+    @include breakpoint-up(large) {
+      align-items: start;
+      justify-content: space-between;
+    }
+    &.col1 {
+      @include breakpoint-up(large) {
+        grid-area: links1;
+      }
+    }
+    &.col2 {
+      @include breakpoint-down(medium) {
+        margin-bottom: 1.875rem;
+      }
+      @include breakpoint-up(large) {
+        grid-area: links2;
+      }
+    }
+    a:hover {
+      color: limegreen;
+      transition: color 150ms ease-in-out;
+    }
+  }
+  &__cta {
+    @include breakpoint-up(large) {
+      grid-area: cta;
+      text-align: right;
+      justify-self: end;
+    }
+    //copyright t a
+    button.button {
+      @include breakpoint-down(medium) {
+        margin-bottom: 1.875rem;
+      }
+    }
+  }
+  &__copyright {
+    font-size: 0.8125rem;
+    //color:graysh - mai sters sau transparent
+    @include breakpoint-up(large) {
+      grid-area: copyright;
+      align-self: end;
+      justify-self: end;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@use "../components/variables" as *;
+@use "../components/reset" as *;
+@use "../components/mixins" as *;
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  line-height: 1.1;
+  margin-top: 0;
+  line-height: 1.15;
+  color: map-get($primary-palette, "b5");
+}
+
+p {
+  margin-top: 0;
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
+}
+
+h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+
+  @include breakpoint-up(large) {
+    font-size: $font-xlg;
+  }
+}
+h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1.5625rem;
+  @include breakpoint-up(large) {
+    margin-bottom: 2.25rem;
+    font-size: 2.25rem;
+  }
+}
